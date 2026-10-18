@@ -38,8 +38,16 @@ def sample_random_action(action_space):
 def should_explore(epsilon, rng):
     return epsilon>rng.random()
 
-# Step 6 - epsilon_greedy_action (not yet solved)
-# TODO: implement
+# Step 6 - epsilon_greedy_action
+import numpy as np
+
+def epsilon_greedy_action(q_table, state, epsilon, action_space, rng):
+    if should_explore(epsilon,rng):
+        return sample_random_action(action_space)
+    
+    q_values = q_table[state]
+    best_actions = np.flatnonzero(q_values == np.max(q_values))
+    return int(rng.choice(best_actions))
 
 # Step 7 - decay_epsilon (not yet solved)
 # TODO: implement
