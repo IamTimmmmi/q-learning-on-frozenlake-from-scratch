@@ -19,8 +19,16 @@ import numpy as np
 def max_q_value(q_table, state):
     return max(q_table[state])
 
-# Step 3 - greedy_action (not yet solved)
-# TODO: implement
+# Step 3 - greedy_action
+import numpy as np
+
+def greedy_action(q_table, state):
+    maximum = [-1,0]
+    for i in range(len(q_table[state])):
+        if q_table[state][i] > maximum[0]:
+            maximum[0] = q_table[state][i]
+            maximum[1] = i
+    return maximum[1]
 
 # Step 4 - sample_random_action (not yet solved)
 # TODO: implement
