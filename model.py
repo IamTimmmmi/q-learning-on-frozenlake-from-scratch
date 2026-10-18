@@ -13,8 +13,11 @@ def init_q_table(num_states, num_actions):
     q_table = np.zeros((num_states, num_actions), dtype = np.float64)
     return q_table
 
-# Step 2 - max_q_value (not yet solved)
-# TODO: implement
+# Step 2 - max_q_value
+import numpy as np
+
+def max_q_value(q_table, state):
+    return max(q_table[state])
 
 # Step 3 - greedy_action (not yet solved)
 # TODO: implement
